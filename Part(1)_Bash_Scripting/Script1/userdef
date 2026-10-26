@@ -1,0 +1,57 @@
+#! /bin/bash
+
+
+x=$1
+
+y=$2
+
+z=$3
+
+w=$USER
+
+
+		if [ -n "$x" ] && [ -n "$y" ] && [ -n "$z" ]; then
+
+	if [ "$w" = "root" ]; then
+
+
+
+	echo "The username of the new user will be: $x "
+
+	echo "The password of the new user will be: $y "
+
+	echo "The group name of the new user will be: $z "
+
+	useradd -N -m -s /bin/bash $x
+
+	echo -e "$y\n$y" | passwd $x
+
+	id $x
+
+	groupadd -g 200 $z
+
+	usermod -aG $z $x
+
+	id $x
+
+	usermod -u 1600 -g 200 $x
+
+	id $x
+
+
+
+	else
+
+	echo "You must run this script with sudo permission"
+
+	exit 2
+
+	fi
+
+		else
+
+		echo "There are arguments that weren't passed"
+
+		exit 1
+
+		fi

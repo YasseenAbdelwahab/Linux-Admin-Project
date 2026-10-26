@@ -1,0 +1,23 @@
+
+g) 
+/home/yasseen$ su - edges
+
+
+h)
+/home/edges$ ls -Rl program
+
+
+i)
+/home/edges$ sudo chown -R edges program
+
+
+j)
+/home/edges$ ls -Rl program
+
+
+k)
+/home/edges$ grep -r "file" program
+
+
+l)
+/home/edges$ rm ./program/*.c

@@ -1,0 +1,7 @@
+**/builds/
+**/build/
+**/CMakeFiles/
+**/CMakeCache.txt
+**/*.o
+**/*.o.d
+**/out/

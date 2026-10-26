@@ -1,0 +1,48 @@
+
+m)
+First Method:
+
+Move userdef script into a folder that is already in the $PATH environment variable like the /usr/bin folder or /usr/local/bin folder
+
+Command:
+
+~/Downloads/Edges/Embedded_Linux_Diploma/Project1/Part(1)_Bash_Scripting/Script1$ sudo mv userdef /usr/local/bin
+
+
+Second Method:
+
+Add the absolute path of your script to the $PATH environment variable
+
+Command:
+
+~$ export PATH="$PATH:/home/yasseen/Downloads/Edges/Embedded_Linux_Diploma/Project1/Part(1)_Bash_Scripting/Script1"
+
+
+
+
+
+n)
+Add the line of adding the absolute path of your script to the $PATH environment variable to the configuration file ~/.bashrc by using a text editor like nano
+
+Command:
+
+~$ nano ~/.bashrc
+
+#then write this line at the bottom of the file
+
+export PATH="$PATH:/home/yasseen/Downloads/Edges/Embedded_Linux_Diploma/Project1/Part(1)_Bash_Scripting/Script1"
+
+#then ctrl+o then enter to save then ctrl+x to exit the nano text editor
+
+
+
+
+
+o)
+use the source command to make this change now in this terminal without reopening the terminal
+
+Command:
+
+~$ source ~/.bashrc
+
+

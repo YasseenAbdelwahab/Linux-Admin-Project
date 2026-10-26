@@ -1,0 +1,41 @@
+#!/bin/bash
+
+x="./program"
+
+y=$USER
+
+
+numbers="main.c main.h hello.c hello.h"
+
+
+	if [ "$USER" = "root" ]; then
+
+
+if [ -d "$x" ]; then
+
+rm -r "$x"
+
+fi
+
+mkdir "$x"
+
+touch "$x/main.c" "$x/main.h" "$x/hello.c" "$x/hello.h"
+
+for num in $numbers;  do
+
+echo "this file is named $num" > "$x/$num"
+
+done
+
+tar -cvf archive.tar $x
+
+cp ./archive.tar /home/edges && cd /home/edges && tar -xvf archive.tar
+
+
+	else
+
+	echo "You must run this script with sudo permission"
+
+	exit 1
+
+	fi
